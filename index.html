@@ -15,21 +15,47 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <div data-view="entry-form">
-      <form id="entry-form">
-        <h2>New Entry</h2>
-        <label for="title">Title</label>
-        <input required id="title" type="text" name="title">
-        <label for="photo-url">Photo URL</label>
-        <input required id="photo-url" type="text" name="photo-url">
-        <label for="notes">Notes</label>
-        <input required id="notes" type="text" name="notes">
-        <button class="save-button">SAVE</button>
-      </form>
+  <header class="row header">
+    <div class="column-full">
+      <h3>Code Journal</h3>
     </div>
   </header>
-  <main>
+  <div class="container" data-view="entry-form">
+    <div class="column-full">
+      <h2>New Entry</h2>
+    </div>
+    <div>
+      <form class="row form">
+        <div class="column-half">
+          <img class="image column-full" src="images/placeholder-image-square.jpg" alt="placeholder">
+        </div>
+        <div class="column-half">
+          <label for="title">Title</label>
+          <input
+            class="title column-full"
+            name="title"
+            type="text">
+          <label for="photo-url">Photo URL</label>
+          <input
+            class="photo-url column-full"
+            name="photo-url"
+            type="url">
+        </div>
+        <div class="column-full">
+          <label for="notes">Notes</label>
+          <textarea
+            rows="5"
+            class="notes"
+            name="notes">
+          </textarea>
+        </div>
+        <div class="column-full save-form">
+          <button class="save-button" type="submit">SAVE</button>
+        </div>
+      </form>
+    </div>
+  </div>
+<main>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
