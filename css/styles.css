@@ -19,7 +19,11 @@ h2 {
   font-size: 2rem;
 }
 
-.image {
+.image,
+label,
+input,
+textarea,
+.save-button {
   border-radius: 0.2rem;
   margin-bottom: 1.5rem;
 }
@@ -30,7 +34,6 @@ textarea {
   display: block;
   width: 100%;
   margin-bottom: 0.5rem;
-  border-radius: 0.2rem;
 }
 
 input {
@@ -61,7 +64,6 @@ textarea:focus {
   background-color: rgb(88, 41, 134);
   color: white;
   border: none;
-  border-radius: 0.2rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
