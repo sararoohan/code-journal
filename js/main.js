@@ -1,11 +1,11 @@
 /* global data */
 /* exported data */
 
-const $img = document.querySelector('img');
+const $placeholderImage = document.querySelector('.placeholder-image');
 const $photoUrl = document.querySelector('.url');
 
 $photoUrl.addEventListener('input', function (event) {
-  $img.setAttribute('src', event.target.value);
+  $placeholderImage.setAttribute('src', event.target.value);
 });
 
 const $entryForm = document.querySelector('.form');
@@ -21,6 +21,6 @@ $entryForm.addEventListener('submit', function (event) {
     nextEntryID: nextEntryID
   };
   data.entries.unshift(formEntries);
-  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $placeholderImage.setAttribute('src', 'images/placeholder-image-square.jpg');
   document.querySelector('.form').reset();
 });

@@ -1,7 +1,7 @@
 body {
   color: rgb(30, 30, 30);
   background-color: rgb(240, 240, 240);
-  font-weight: 500;
+  font-weight: 300;
   font-family: 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -11,18 +11,24 @@ header {
   padding: 0.25rem 0;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
 h3 {
   font-weight: 300;
 }
 
-h2 {
-  font-size: 2rem;
+p {
+  line-height: 2rem;
+  font-size: 1.25rem;
+  padding-bottom: 1rem;
 }
 
-.image,
 label,
 input,
 textarea,
+.placeholder-image,
 .save-button {
   border-radius: 0.2rem;
   margin-bottom: 1.5rem;
@@ -33,7 +39,11 @@ input,
 textarea {
   display: block;
   width: 100%;
+}
+
+label {
   margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 input {
@@ -66,4 +76,19 @@ textarea:focus {
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+}
+
+.entry-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.entry-image {
+  height: 21.5rem;
+  padding-bottom: 1rem;
+}
+
+.entry-list-item {
+  /* padding: 1rem 0; */
 }
