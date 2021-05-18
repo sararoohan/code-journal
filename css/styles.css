@@ -21,8 +21,8 @@ h3 {
 
 p {
   line-height: 2rem;
-  font-size: 1.25rem;
-  padding-bottom: 1rem;
+  font-size: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 label,
@@ -81,14 +81,12 @@ textarea:focus {
 .entry-list {
   list-style-type: none;
   margin: 0;
-  padding: 1rem 0;
-}
-
-.entry-image {
-  height: 21.5rem;
+  padding: 0;
   padding-bottom: 1rem;
 }
 
-.entry-list-item {
-  /* padding: 1rem 0; */
+.entry-image {
+  height: 22rem;
+  padding: 0;
+  margin: 1rem 0;
 }
