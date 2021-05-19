@@ -91,3 +91,10 @@ textarea:focus {
   font-size: 1rem;
   padding-bottom: 0.5rem;
 }
+
+.top-nav-item {
+  font-weight: 300;
+  padding: 1.25rem 0 0 2rem;
+  color: white;
+  text-decoration: none;
+}
