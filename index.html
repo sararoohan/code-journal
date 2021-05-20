@@ -16,17 +16,19 @@
 </head>
 <body>
   <header class="header">
-    <div class="row container">
-      <h3>Code Journal</h3>
-      <a class="top-nav-item" href="entries.html">Entries</a>
+    <div class="container">
+      <div class="row column-full">
+        <h3>Code Journal</h3>
+        <a class="top-nav" href="entries.html">Entries</a>
+      </div>
     </div>
   </header>
   <div class="container" data-view="entry-form">
+    <div class="row column-full">
+      <h1>New Entry</h1>
+    </div>
     <div>
       <form class="row form">
-        <div class="column-full">
-          <h1>New Entry</h1>
-        </div>
         <div class="column-half">
           <img class="placeholder-image column-full" src="images/placeholder-image-square.jpg" alt="placeholder">
         </div>
@@ -49,7 +51,7 @@
           <textarea
             required
             rows="5"
-            class="notes"
+            class="column-full notes"
             name="notes"></textarea>
         </div>
         <div class="column-full save-form">
