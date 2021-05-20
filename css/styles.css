@@ -82,7 +82,8 @@ textarea:focus {
 }
 
 .entry-image {
-  height: 22rem;
+  object-fit: cover;
+  object-position: 50% 50%;
   padding: 0;
   margin: 1rem 0;
 }
@@ -102,4 +103,9 @@ textarea:focus {
 
 .no-wrap {
   flex-wrap: nowrap;
+}
+
+.no-entries {
+  display: flex;
+  justify-content: center;
 }

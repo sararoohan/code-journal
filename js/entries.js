@@ -35,10 +35,12 @@ function newEntry(entry) {
 }
 
 const $entryList = document.querySelector('.entry-list');
+const $noEntries = document.querySelector('.no-entries');
 
 document.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
     var $domTree = newEntry(data.entries[i]);
     $entryList.appendChild($domTree);
+    $noEntries.className = 'hidden';
   }
 });
