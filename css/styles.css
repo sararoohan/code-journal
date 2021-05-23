@@ -5,19 +5,18 @@ body {
   font-family: 'Lucida Sans', Arial, sans-serif;
 }
 
-header {
+.page-header {
   background-color: rgb(88, 41, 134);
   color: white;
-  padding: 0.25rem 0;
 }
 
-h1 {
+/* h1 {
   font-size: 2rem;
-}
+} */
 
-h3 {
+/* h3 {
   font-weight: 300;
-}
+} */
 
 label {
   margin-bottom: 0.5rem;
@@ -94,11 +93,28 @@ textarea:focus {
   padding-bottom: 0.5rem;
 }
 
-.top-nav {
+/* .top-nav {
   font-weight: 300;
   padding: 1.25rem 0 0 2rem;
   color: white;
   text-decoration: none;
+} */
+
+.nav-item {
+  padding: 1rem 1.5rem 1rem 0;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+[data-view="entry-form"].nav-item {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+[data-view="entries"].nav-item {
+  cursor: pointer;
 }
 
 .no-wrap {
