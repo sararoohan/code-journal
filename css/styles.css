@@ -100,7 +100,7 @@ textarea:focus {
   text-decoration: none;
 } */
 
-.nav-item {
+.tab {
   padding: 1rem 1.5rem 1rem 0;
   display: flex;
   align-items: center;
@@ -108,12 +108,12 @@ textarea:focus {
   text-decoration: none;
 }
 
-[data-view="entry-form"].nav-item {
+[data-view="entry-form"].tab.active {
   font-size: 1.25rem;
   font-weight: 300;
 }
 
-[data-view="entries"].nav-item {
+[data-view="entries"].tab.active {
   cursor: pointer;
 }
 

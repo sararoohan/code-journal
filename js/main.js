@@ -20,34 +20,35 @@ $entryForm.addEventListener('submit', function (event) {
     notes: $entryForm.elements.notes.value,
     nextEntryID: nextEntryID
   };
-
   data.entries.unshift(formEntries);
   data.view = 'entries';
-  // console.log(data.view);
+  showView(data.view);
+  // console.log(showView(data.view));
   $placeholderImage.setAttribute('src', 'images/placeholder-image-square.jpg');
-  document.querySelector('.form').reset();
+  $entryForm.reset();
 });
 
-// function showView() {
-//  data.view.replace
-// }
 const $allViews = document.querySelectorAll('.view');
-// console.dir($allViews);
+
+function showView(view) {
+  const $dataView = event.target.getAttribute('data-view');
+  for (let j = 0; j < $allViews.length; j++) {
+    if ($allViews[j].getAttribute('data-view') === $dataView) {
+      $allViews[j].className = 'container view';
+    } else {
+      $allViews[j].className = 'container view ' + 'hidden';
+    }
+  }
+}
 
 document.addEventListener('click', function (event) {
   if (event.target.matches('a')) {
     const $dataView = event.target.getAttribute('data-view');
-    for (let i = 0; i < $allViews.length; i++) {
-      if ($allViews[i].getAttribute('data-view') === $dataView) {
-        $allViews[i].className = 'container view';
-      } else {
-        $allViews[i].className = 'container view ' + 'hidden';
-      }
-    }
+    showView($dataView);
   }
 });
 
-function newEntry(entry) {
+function renderEntry(entry) {
   const $entryItem = document.createElement('li');
   $entryItem.setAttribute('class', 'row entry-list-item');
 
@@ -85,7 +86,7 @@ const $noEntries = document.querySelector('.no-entries');
 
 document.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
-    var $domTree = newEntry(data.entries[i]);
+    var $domTree = renderEntry(data.entries[i]);
     $entryList.appendChild($domTree);
     $noEntries.className = 'hidden';
   }
