@@ -3,12 +3,25 @@
 
 const $placeholderImage = document.querySelector('.placeholder-image');
 const $photoUrl = document.querySelector('.url');
+const $allViews = document.querySelectorAll('.view');
+const $entryForm = document.querySelector('.form');
+let nextEntryID = 1;
+
+function showView(view) {
+  const $dataView = event.target.getAttribute('data-view');
+  for (let viewIndex = 0; viewIndex < $allViews.length; viewIndex++) {
+    if ($allViews[viewIndex].getAttribute('data-view') === $dataView) {
+      $allViews[viewIndex].className = 'container view';
+    } else {
+      $allViews[viewIndex].className = 'container view ' + 'hidden';
+    }
+  }
+}
+
 $photoUrl.addEventListener('input', function (event) {
   $placeholderImage.setAttribute('src', event.target.value);
 });
 
-const $entryForm = document.querySelector('.form');
-let nextEntryID = 1;
 // console.log($entryForm);
 $entryForm.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -23,23 +36,9 @@ $entryForm.addEventListener('submit', function (event) {
   data.entries.unshift(formEntries);
   data.view = 'entries';
   showView(data.view);
-  // console.log(showView(data.view));
   $placeholderImage.setAttribute('src', 'images/placeholder-image-square.jpg');
   $entryForm.reset();
 });
-
-const $allViews = document.querySelectorAll('.view');
-
-function showView(view) {
-  const $dataView = event.target.getAttribute('data-view');
-  for (let j = 0; j < $allViews.length; j++) {
-    if ($allViews[j].getAttribute('data-view') === $dataView) {
-      $allViews[j].className = 'container view';
-    } else {
-      $allViews[j].className = 'container view ' + 'hidden';
-    }
-  }
-}
 
 document.addEventListener('click', function (event) {
   if (event.target.matches('a')) {
@@ -67,13 +66,13 @@ function renderEntry(entry) {
   $entryItem.appendChild($entryText);
 
   const $entryTitle = document.createElement('h2');
-  $entryTitle.setAttribute('class', 'entry-title');
+  $entryTitle.setAttribute('class', 'column-full entry-title');
   const $titleText = document.createTextNode(entry.title);
   $entryTitle.appendChild($titleText);
   $entryText.appendChild($entryTitle);
 
   const $entryNotes = document.createElement('p');
-  $entryNotes.setAttribute('class', 'entry-notes');
+  $entryNotes.setAttribute('class', 'column-full entry-notes');
   const $notesText = document.createTextNode(entry.notes);
   $entryNotes.appendChild($notesText);
   $entryText.appendChild($entryNotes);

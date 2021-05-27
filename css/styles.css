@@ -108,12 +108,12 @@ textarea:focus {
   text-decoration: none;
 }
 
-[data-view="entry-form"].tab.active {
+[data-view="entry-form"].tab {
   font-size: 1.25rem;
   font-weight: 300;
 }
 
-[data-view="entries"].tab.active {
+[data-view="entries"].tab {
   cursor: pointer;
 }
 
