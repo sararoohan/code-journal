@@ -22,7 +22,6 @@ $photoUrl.addEventListener('input', function (event) {
   $placeholderImage.setAttribute('src', event.target.value);
 });
 
-// console.log($entryForm);
 $entryForm.addEventListener('submit', function (event) {
   event.preventDefault();
   nextEntryID++;
@@ -89,4 +88,5 @@ document.addEventListener('DOMContentLoaded', function (event) {
     $entryList.appendChild($domTree);
     $noEntries.className = 'hidden';
   }
+  showView(data.view);
 });

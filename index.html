@@ -19,7 +19,7 @@
     <header class="page-header">
       <div class="container tabs">
         <div class="row">
-          <div class="tab" data-view="entry-form">Code Journal</div>
+          <a class="tab" data-view="entry-form" href="#">Code Journal</a>
           <a class="tab" data-view="entries" href="#">Entries</a>
         </div>
       </div>
@@ -27,7 +27,7 @@
     <div class="container view" data-view="entry-form">
       <div class="row">
         <h1>New Entry</h1>
-        <form id="entry-form" class="row form" data-view="entries">
+        <form id="entry-form" class="row form" data-view="entries" action="#entries" method="GET">
           <div class="column-half">
             <img class="placeholder-image column-full" src="images/placeholder-image-square.jpg" alt="placeholder">
           </div>
