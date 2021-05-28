@@ -11,7 +11,6 @@ const $noEntries = document.querySelector('.no-entries');
 
 function showView(view) {
   for (let viewIndex = 0; viewIndex < $allViews.length; viewIndex++) {
-    // console.log(data.view);
     if ($allViews[viewIndex].getAttribute('data-view') === view) {
       $allViews[viewIndex].className = 'container view';
     } else {
@@ -47,18 +46,13 @@ $entryForm.addEventListener('submit', function (event) {
 document.addEventListener('click', function (event) {
   if (event.target.matches('a')) {
     const $dataView = event.target.getAttribute('data-view');
-    // console.log(event.target.getAttribute('data-view'));
     if ($dataView === 'entry-form') {
       data.view = 'entry-form';
       showView('entry-form');
-      // console.log('$dataView:', $dataView);
     } else if ($dataView === 'entries') {
       data.view = 'entries';
       showView('entries');
-      // console.log('$dataView:', $dataView);
     }
-    // console.log('event.target:', event.target);
-    // console.log('$dataView:', $dataView);
   }
 });
 
