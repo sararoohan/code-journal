@@ -6,11 +6,13 @@ const $photoUrl = document.querySelector('.url');
 const $allViews = document.querySelectorAll('.view');
 const $entryForm = document.querySelector('.form');
 let nextEntryID = 1;
+const $entryList = document.querySelector('.entry-list');
+const $noEntries = document.querySelector('.no-entries');
 
 function showView(view) {
-  const $dataView = event.target.getAttribute('data-view');
   for (let viewIndex = 0; viewIndex < $allViews.length; viewIndex++) {
-    if ($allViews[viewIndex].getAttribute('data-view') === $dataView) {
+    // console.log(data.view);
+    if ($allViews[viewIndex].getAttribute('data-view') === view) {
       $allViews[viewIndex].className = 'container view';
     } else {
       $allViews[viewIndex].className = 'container view ' + 'hidden';
@@ -33,8 +35,11 @@ $entryForm.addEventListener('submit', function (event) {
     nextEntryID: nextEntryID
   };
   data.entries.unshift(formEntries);
-  data.view = 'entries';
-  showView(data.view);
+  showView('entries');
+
+  const newEntry = renderEntry(formEntries);
+  $entryList.prepend(newEntry);
+
   $placeholderImage.setAttribute('src', 'images/placeholder-image-square.jpg');
   $entryForm.reset();
 });
@@ -42,7 +47,18 @@ $entryForm.addEventListener('submit', function (event) {
 document.addEventListener('click', function (event) {
   if (event.target.matches('a')) {
     const $dataView = event.target.getAttribute('data-view');
-    showView($dataView);
+    // console.log(event.target.getAttribute('data-view'));
+    if ($dataView === 'entry-form') {
+      data.view = 'entry-form';
+      showView('entry-form');
+      // console.log('$dataView:', $dataView);
+    } else if ($dataView === 'entries') {
+      data.view = 'entries';
+      showView('entries');
+      // console.log('$dataView:', $dataView);
+    }
+    // console.log('event.target:', event.target);
+    // console.log('$dataView:', $dataView);
   }
 });
 
@@ -79,12 +95,9 @@ function renderEntry(entry) {
   return $entryItem;
 }
 
-const $entryList = document.querySelector('.entry-list');
-const $noEntries = document.querySelector('.no-entries');
-
 document.addEventListener('DOMContentLoaded', function (event) {
-  for (var i = 0; i < data.entries.length; i++) {
-    var $domTree = renderEntry(data.entries[i]);
+  for (let i = 0; i < data.entries.length; i++) {
+    const $domTree = renderEntry(data.entries[i]);
     $entryList.appendChild($domTree);
     $noEntries.className = 'hidden';
   }
