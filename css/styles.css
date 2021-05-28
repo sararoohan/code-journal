@@ -1,39 +1,23 @@
 body {
   color: rgb(30, 30, 30);
   background-color: rgb(240, 240, 240);
-  font-weight: 500;
+  font-weight: 300;
   font-family: 'Lucida Sans', Arial, sans-serif;
 }
 
-header {
+.page-header {
   background-color: rgb(88, 41, 134);
   color: white;
-  padding: 0.25rem 0;
 }
 
-h3 {
-  font-weight: 300;
+.form-heading {
+  padding-left: 0.75rem;
 }
 
-h2 {
-  font-size: 2rem;
-}
-
-.image,
-label,
-input,
-textarea,
-.save-button {
-  border-radius: 0.2rem;
-  margin-bottom: 1.5rem;
-}
-
-label,
-input,
-textarea {
-  display: block;
-  width: 100%;
+label {
   margin-bottom: 0.5rem;
+  font-weight: 500;
+  display: block;
 }
 
 input {
@@ -41,8 +25,21 @@ input {
 }
 
 input,
-textarea {
+.placeholder-image {
   margin-bottom: 1.5rem;
+}
+
+input,
+textarea,
+.placeholder-image,
+.entry-image,
+.save-button,
+.new-entry-button {
+  border-radius: 0.2rem;
+}
+
+input,
+textarea {
   border: 1px solid rgb(196, 196, 196);
   font-size: 1rem;
   font-family: sans-serif;
@@ -55,15 +52,63 @@ textarea:focus {
   box-shadow: 0 0 1px 1px rgba(88, 41, 134, 0.5);
 }
 
-.save-form {
+.save-form,
+.new-form {
   display: flex;
   justify-content: flex-end;
+  margin: 1.5rem 0;
 }
 
-.save-button {
+.save-button,
+.new-entry-button {
   background-color: rgb(88, 41, 134);
   color: white;
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.entry-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry-image {
+  object-fit: cover;
+  object-position: 50% 50%;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.entry-notes {
+  line-height: 2rem;
+  font-size: 1rem;
+}
+
+.tab {
+  padding: 1rem 0.75rem;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+[data-view="entry-form"].tab {
+  font-size: 1.25rem;
+}
+
+.no-wrap {
+  flex-wrap: nowrap;
+}
+
+.no-entries {
+  display: flex;
+  justify-content: center;
+}
+
+li.row {
+  padding-bottom: 3rem;
 }
