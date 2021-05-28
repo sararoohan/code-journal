@@ -10,6 +10,10 @@ body {
   color: white;
 }
 
+.form-heading {
+  padding-left: 0.75rem;
+}
+
 label {
   margin-bottom: 0.5rem;
   font-weight: 500;
@@ -69,37 +73,31 @@ textarea:focus {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  padding-bottom: 1rem;
 }
 
 .entry-image {
   object-fit: cover;
   object-position: 50% 50%;
   padding: 0;
-  margin: 1rem 0;
+  margin-bottom: 2rem;
 }
 
 .entry-notes {
   line-height: 2rem;
   font-size: 1rem;
-  padding-bottom: 0.5rem;
 }
 
 .tab {
-  padding: 1rem 1.5rem 1rem 0;
+  padding: 1rem 0.75rem;
   display: flex;
   align-items: center;
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 
 [data-view="entry-form"].tab {
   font-size: 1.25rem;
-  font-weight: 300;
-}
-
-[data-view="entries"].tab {
-  cursor: pointer;
 }
 
 .no-wrap {
@@ -109,4 +107,8 @@ textarea:focus {
 .no-entries {
   display: flex;
   justify-content: center;
+}
+
+li.row {
+  padding-bottom: 3rem;
 }
