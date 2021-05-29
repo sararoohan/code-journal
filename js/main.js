@@ -65,7 +65,15 @@ $entryList.addEventListener('click', function (event) {
         data.editing = data.entries[j];
       }
       // console.log(data.editing);
+      const $populatedEntry = {
+        title: $entryForm.elements.title.value = data.editing.title,
+        url: $entryForm.elements.url.value = data.editing.url,
+        notes: $entryForm.elements.notes.value = data.editing.notes,
+        nextEntryID: nextEntryID = data.editing.nextEntryID
+      };
+      data.editing = $populatedEntry;
     }
+    // console.log(data.editing);
   }
 });
 
@@ -88,7 +96,7 @@ function renderEntry(entry) {
   $entryItem.appendChild($entryText);
 
   const $entryTitle = document.createElement('h2');
-  $entryTitle.setAttribute('class', 'column-full entry-title');
+  $entryTitle.setAttribute('class', 'row entry-title');
   const $titleText = document.createTextNode(entry.title);
   $entryTitle.appendChild($titleText);
   $entryText.appendChild($entryTitle);
@@ -98,7 +106,7 @@ function renderEntry(entry) {
   $entryTitle.appendChild($editPen);
 
   const $entryNotes = document.createElement('p');
-  $entryNotes.setAttribute('class', 'column-full entry-notes');
+  $entryNotes.setAttribute('class', 'entry-notes');
   const $notesText = document.createTextNode(entry.notes);
   $entryNotes.appendChild($notesText);
   $entryText.appendChild($entryNotes);
