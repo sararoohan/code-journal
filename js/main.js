@@ -56,6 +56,12 @@ document.addEventListener('click', function (event) {
   }
 });
 
+$entryList.addEventListener('click', function (event) {
+  if (event.target.matches('i')) {
+    showView('entry-form');
+  }
+});
+
 function renderEntry(entry) {
   const $entryItem = document.createElement('li');
   $entryItem.setAttribute('class', 'row entry-list-item');
