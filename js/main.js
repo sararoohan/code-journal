@@ -59,6 +59,13 @@ document.addEventListener('click', function (event) {
 $entryList.addEventListener('click', function (event) {
   if (event.target.matches('i')) {
     showView('entry-form');
+    const $dataEntryID = parseInt(event.target.getAttribute('data-entry-id'));
+    for (let j = 0; j < data.entries.length; j++) {
+      if (data.entries[j].nextEntryID === $dataEntryID) {
+        data.editing = data.entries[j];
+      }
+      // console.log(data.editing);
+    }
   }
 });
 
