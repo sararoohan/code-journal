@@ -112,3 +112,13 @@ textarea:focus {
 li.row {
   padding-bottom: 3rem;
 }
+
+.fas.fa-pen {
+  color: rgb(88, 41, 134);
+  cursor: pointer;
+  padding-left: 1rem;
+}
+
+.entry-title {
+  justify-content: space-between;
+}

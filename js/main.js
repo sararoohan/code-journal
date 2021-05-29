@@ -79,6 +79,9 @@ function renderEntry(entry) {
   const $titleText = document.createTextNode(entry.title);
   $entryTitle.appendChild($titleText);
   $entryText.appendChild($entryTitle);
+  const $editPen = document.createElement('i');
+  $editPen.setAttribute('class', 'fas fa-pen');
+  $entryTitle.appendChild($editPen);
 
   const $entryNotes = document.createElement('p');
   $entryNotes.setAttribute('class', 'column-full entry-notes');
