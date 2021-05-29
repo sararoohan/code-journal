@@ -81,6 +81,7 @@ function renderEntry(entry) {
   $entryText.appendChild($entryTitle);
   const $editPen = document.createElement('i');
   $editPen.setAttribute('class', 'fas fa-pen');
+  $editPen.setAttribute('data-entry-id', entry.nextEntryID);
   $entryTitle.appendChild($editPen);
 
   const $entryNotes = document.createElement('p');
