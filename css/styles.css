@@ -10,10 +10,6 @@ body {
   color: white;
 }
 
-.form-heading {
-  padding-left: 0.75rem;
-}
-
 label {
   margin-bottom: 0.5rem;
   font-weight: 500;
@@ -88,7 +84,7 @@ textarea:focus {
 }
 
 .tab {
-  padding: 1rem 0.75rem;
+  padding: 1rem 1.5rem 1rem 0;
   display: flex;
   align-items: center;
   color: white;
@@ -121,4 +117,5 @@ li.row {
 
 .entry-title {
   justify-content: space-between;
+  margin: 0;
 }
