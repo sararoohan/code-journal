@@ -52,7 +52,6 @@ textarea:focus {
 .new-form {
   display: flex;
   justify-content: flex-end;
-  margin: 1.5rem 0;
 }
 
 .save-button,
@@ -63,6 +62,7 @@ textarea:focus {
   padding: 0.5rem 1rem;
   cursor: pointer;
   text-decoration: none;
+  margin: 1.5rem 0;
 }
 
 .entry-list {
@@ -119,3 +119,16 @@ li.row {
   justify-content: space-between;
   margin: 0;
 }
+
+.delete-button {
+  text-decoration: underline;
+  color: red;
+  border: none;
+  text-align: start;
+  padding: 0;
+}
+
+/* display: flex;
+    justify-content: flex-end;
+    padding-right: 0;
+} */
