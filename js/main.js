@@ -34,8 +34,8 @@ $entryForm.addEventListener('submit', function (event) {
   };
   if (data.editing !== null) {
     data.entries.splice(data.entries.nextEntryId, 1, formEntries);
-    for (var x = 0; x < $entryList.childNodes.length; x++) {
-      var $entry = $entryList.childNodes[x];
+    for (let x = 0; x < $entryList.childNodes.length; x++) {
+      const $entry = $entryList.childNodes[x];
       if ($dataEntryID === data.editing.nextEntryId) {
         $entry.replaceWith(renderEntry(formEntries));
       }
@@ -65,10 +65,11 @@ document.addEventListener('click', function (event) {
 });
 
 const $deleteButton = document.querySelector('.delete-button');
-
+// const $viewHeading = document.querySelector('.view-heading');
 $entryList.addEventListener('click', function (event) {
   if (event.target.matches('i')) {
     showView('entry-form');
+    // $viewHeading = 'Edit Entry';
     $deleteButton.className = 'delete-button';
     const $dataEntryID = parseInt(event.target.getAttribute('data-entry-id'));
     for (let j = 0; j < data.entries.length; j++) {
@@ -87,20 +88,20 @@ $entryList.addEventListener('click', function (event) {
   }
 });
 
-var $modal = document.querySelector('.modal-container');
-var $cancelDelete = document.querySelector('.button.cancel');
-var $confirmDelete = document.querySelector('.button.confirm');
+const $modal = document.querySelector('.modal-container');
+const $cancelDelete = document.querySelector('.button.cancel');
+const $confirmDelete = document.querySelector('.button.confirm');
 
 $deleteButton.addEventListener('click', function (event) {
   $modal.style.display = 'block';
 });
 
 $cancelDelete.addEventListener('click', function (event) {
-  $cancelDelete.style.display = 'none';
+  $modal.style.display = 'none';
 });
 
 $confirmDelete.addEventListener('click', function (event) {
-  $confirmDelete.style.display = 'none';
+  $modal.style.display = 'none';
 });
 
 function renderEntry(entry) {
