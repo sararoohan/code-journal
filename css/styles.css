@@ -48,8 +48,7 @@ textarea:focus {
   box-shadow: 0 0 1px 1px rgba(88, 41, 134, 0.5);
 }
 
-.save-form,
-.new-form {
+.form-action {
   display: flex;
   justify-content: flex-end;
 }
@@ -110,9 +109,13 @@ li.row {
 }
 
 .fas.fa-pen {
-  color: rgb(88, 41, 134);
+  color: rgba(88, 41, 134, 0.6);
   cursor: pointer;
   padding-left: 1rem;
+}
+
+.fas.fa-pen:hover {
+  color: rgb(88, 41, 134);
 }
 
 .entry-title {
@@ -122,13 +125,55 @@ li.row {
 
 .delete-button {
   text-decoration: underline;
-  color: red;
+  color: rgba(233, 62, 62, 0.7);
+  font-weight: 700;
   border: none;
   text-align: start;
   padding: 0;
 }
 
-/* display: flex;
-    justify-content: flex-end;
-    padding-right: 0;
-} */
+.delete-button:hover {
+  color: rgb(233, 62, 62);
+}
+
+.modal-container {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  padding-top: 10rem;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-box {
+  width: 25rem;
+  margin: auto;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  text-align: center;
+  background-color: white;
+}
+
+.button {
+  height: 2.25rem;
+  width: 6rem;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.button.cancel {
+  color: black;
+  background-color: lightgray;
+  margin-right: 5rem;
+}
+
+.button.confirm {
+  color: white;
+  background-color: rgb(233, 62, 62);
+  margin-left: 5rem;
+}

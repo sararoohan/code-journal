@@ -7,7 +7,6 @@ const $allViews = document.querySelectorAll('.view');
 const $entryForm = document.querySelector('.form');
 const $entryList = document.querySelector('.entry-list');
 const $noEntries = document.querySelector('.no-entries');
-const $deleteButton = document.querySelector('.delete-button');
 
 function showView(view) {
   for (let viewIndex = 0; viewIndex < $allViews.length; viewIndex++) {
@@ -65,10 +64,12 @@ document.addEventListener('click', function (event) {
   }
 });
 
+const $deleteButton = document.querySelector('.delete-button');
+
 $entryList.addEventListener('click', function (event) {
   if (event.target.matches('i')) {
     showView('entry-form');
-    $deleteButton.className = 'column-half delete-button';
+    $deleteButton.className = 'delete-button';
     const $dataEntryID = parseInt(event.target.getAttribute('data-entry-id'));
     for (let j = 0; j < data.entries.length; j++) {
       if (data.entries[j].nextEntryId === $dataEntryID) {
@@ -86,10 +87,21 @@ $entryList.addEventListener('click', function (event) {
   }
 });
 
-// $entryForm.addEventListener('click', function (event) {
-//   if (event.target.matches('delete-button')) {
+var $modal = document.querySelector('.modal-container');
+var $cancelDelete = document.querySelector('.button.cancel');
+var $confirmDelete = document.querySelector('.button.confirm');
 
-//   }
+$deleteButton.addEventListener('click', function (event) {
+  $modal.style.display = 'block';
+});
+
+$cancelDelete.addEventListener('click', function (event) {
+  $cancelDelete.style.display = 'none';
+});
+
+$confirmDelete.addEventListener('click', function (event) {
+  $confirmDelete.style.display = 'none';
+});
 
 function renderEntry(entry) {
   const $entryItem = document.createElement('li');
